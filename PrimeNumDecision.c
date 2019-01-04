@@ -1,7 +1,7 @@
 /*
 *   2018/12/26
 *   ver1 作成
-*   素数判定　但し8byte
+*   素数判定　但し4byte
 */
 #include <stdio.h>
 
