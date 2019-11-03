@@ -14,7 +14,7 @@ int main(int argc, char *argv[]){
     if( argc < 3 || argc > 4 ||
     (infile = fopen(argv[1], "rb")) == NULL ||
     (outfile = fopen(argv[2], "wb")) == NULL ){
-        fputs("使用法: crypt infile outfile [Key]\n", stderr);
+        fputs("How to: crypt infile outfile [Key]\n", stderr);
     }
     if(argc == 4) srand(atoi(argv[3]));
     while((c = getc(infile)) != EOF){   //  Streamから1文字単位で読みとり
@@ -23,6 +23,5 @@ int main(int argc, char *argv[]){
         }while(r >= 256);
         putc(c ^ r, outfile);   //  1文字ずつファイルへ書き込み
     }
-    printf("%d\t%d\n", r, RAND_MAX);
     return 0;
 }
