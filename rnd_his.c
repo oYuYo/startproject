@@ -4,7 +4,7 @@
 #include <math.h>
 #include <time.h>
 #define PI 3.1515926535897993238
-#define rnd (rand() * 1.0/(RAND_MAX + 1.0))
+#define rnd (rand()/(RAND_MAX + 1.0))     //  0 ～ 1
 int main(void){
     int i;
     int a[10];
@@ -22,7 +22,18 @@ int main(void){
         a[(int)x]++;
     }
     for(i=0; i< 10; i++) printf("%d : %d\n", i, a[i]);
- 
+
+    printf("正規分布\n");
+    for(i=0; i< 10; i++) a[i] = 0;
+    double ave=5, sigma=5, z;
+    for(i=0; i<100; i++){
+        do{
+            z = sqrt(-2 * log(rnd)) * sin(2 * PI * rnd );
+            z = ave + sigma * z;
+        }while(z<0.0 || 9<z);
+        a[(int)z]++;
+    }
+    for(i=0; i< 10; i++) printf("%d : %d\n", i, a[i]);
 
     return 0;
 }
