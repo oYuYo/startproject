@@ -7,7 +7,7 @@ int main(void){
     while(num != 0){
         num /= 10; d++;
     }
-    if(d != 4){ printf("input correctly. go back home and play tumbler.\n"); return 0; }
+    if(d != 4){ printf("input correctly. go back home and play tumblr.\n"); return 0; }
 
     if(n < 1868){
         printf("no support in this system.\ngo back home.\n");
