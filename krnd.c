@@ -6,7 +6,6 @@ static int ia[56];
 
 static void irnd55(void){
     int i, j;
-
     for(i=1; i<=24; i++){
         j = ia[i] - ia[i+31];
         if(j < 0) j += MRND;
