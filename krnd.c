@@ -14,7 +14,6 @@ static void irnd55(void){
 }
 void init_rnd(unsigned int seed){
     int i, ii, k;
-
     ia[55] = seed;
     k = 1;
     for(i=1; i<=54; i++){
@@ -39,6 +38,6 @@ double rnd(void){
 int main(void){
     int i;
     init_rnd(12345);
-    for(i=0; i<160; i++) printf("%f", rnd());
+    for(i=0; i<160; i++) printf(" %f", rnd());
     return 0;
 }
