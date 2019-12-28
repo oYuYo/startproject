@@ -11,11 +11,11 @@ void shellsort(int n, int a[]){
     while(h > 0){
         for(i=0; i<n; i++){
             t = a[i];
-            for(j=i-h; j>=0 && a[j]>t; j-=h)
+            for(j=i-h; j>=0 && a[j]>t; j-=h)    //  hの間隔で比較, hを1にすると挿入ソートになる
                 a[j+h] = a[j];
             a[j+h] = t;
         }
-        h /= 3;
+        h /= 3;     //  大雑把にソートし次第に間隔を小さくする
     }
 }
 int main(void){
