@@ -9,6 +9,13 @@
 #include <stdio.h>
 int main(void){
     int i = 1;
+    char *c;
+    printf("%d\n", i);
+    c = &*((char *)&i);
+    printf("%d\n", *(c++)); //1byte目
+    printf("%d\n", *(c++)); //2byte目
+    printf("%d\n", *(c++)); //3byte目
+    printf("%d\n", *(c++)); //4byte目
     if(*((char *)&i))
         printf("little endian\n");
     else if(*((char *)&i + (sizeof(int) - 1)))
