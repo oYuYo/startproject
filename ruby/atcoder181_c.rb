@@ -14,7 +14,7 @@ for i in 0..a.size-1
       x2 -= x3
       y1 -= y3
       y2 -= y3
-      if x1*y2 = x2*y1
+      if x1*y2 == x2*y1
         puts "Yes"
         exit
       end
