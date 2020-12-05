@@ -1,4 +1,4 @@
 # startproject
-とりあえず使ってみる
+ものおき
 
 This is my study.
