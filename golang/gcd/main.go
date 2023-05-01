@@ -9,20 +9,16 @@ import (
 	"strings"
 )
 
-func gcd(n, m int) (int, error) {
-	if n < 0 || m < 0 {
+func GCD(m, n int) (int, error) {
+	if m < 0 || n < 0 {
 		return -1, errors.New("the given number is invalid")
-	}
-
-	if n > m {
-		n, m = m, n
 	}
 
 	if n == 0 {
 		return m, nil
 	}
 
-	return gcd(n, m%n)
+	return GCD(n, m%n)
 }
 
 func main() {
@@ -41,18 +37,18 @@ func main() {
 	}
 
 	arr := strings.Split(target, ",")
-	n, err := strconv.Atoi(arr[0])
+	m, err := strconv.Atoi(arr[0])
 	if err != nil {
 		fmt.Println("input number is invalid")
 		os.Exit(1)
 	}
-	m, err := strconv.Atoi(arr[1])
+	n, err := strconv.Atoi(arr[1])
 	if err != nil {
 		fmt.Println("input number is invalid")
 		os.Exit(1)
 	}
 
-	result, err := gcd(n, m)
+	result, err := GCD(m, n)
 	if err != nil {
 		os.Exit(1)
 	}
